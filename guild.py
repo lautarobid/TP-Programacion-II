@@ -1,6 +1,7 @@
+from personaje import Personaje
 
 class Guild:
-    def __init__(self, name: str, guild_master: Character):
+    def __init__(self, name: str, guild_master:Personaje):
         self.name = name
         self.members: List[Character] = []
         self.guild_master = guild_master

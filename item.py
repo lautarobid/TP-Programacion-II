@@ -1,4 +1,5 @@
 class Item():
+    item = []
     
     def __init__(self,nombre:str,tipo:str,attack_power:int,defense:int,efect:str):
          self.__nombre = nombre

@@ -1,3 +1,5 @@
+
+
 class Skill():
     def __init__(self,nombre:str,mana_cost:int,damage:int,cooldown:float):
          self.__nombre = nombre

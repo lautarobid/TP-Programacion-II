@@ -1,6 +1,7 @@
 from abc import ABC,classmethod
+from tipopersonaje import TipoPersonaje
 
-class Character(ABC):
+class Personaje(ABC):
     def __init__(self, name: str, level: int, health: int, mana: int, strength: int, agility: int, vitality: int, energy: int, experience: int):
         self.name = name
         self.level = level
@@ -14,11 +15,11 @@ class Character(ABC):
         self.equipment: List[Item] = []
 
     @abstractmethod
-    def attack(self, target: 'Character'):
+    def attack(self, target: 'Personaje'):
         pass
 
     @abstractmethod
-    def use_skill(self, skill: Skill, target: 'Character'):
+    def use_skill(self, skill: Skill, target: 'Personaje'):
         pass
 
     def level_up(self):

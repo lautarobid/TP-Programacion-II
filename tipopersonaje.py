@@ -1,3 +1,4 @@
+from skill import Skill
 class TipoPersonaje():
     def __init__(self,nombre:str):
          self.__nombre = nombre
