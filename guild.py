@@ -3,15 +3,15 @@ from personaje import Personaje
 class Guild:
     def __init__(self, name: str, guild_master:Personaje):
         self.name = name
-        self.members: List[Character] = []
+        self.members: List[Personaje] = []
         self.guild_master = guild_master
         self.guild_points = self.calculate_guild_points()
 
-    def add_member(self, character: Character):
+    def add_member(self, character: Personaje):
         self.members.append(character)
         self.guild_points = self.calculate_guild_points()
 
-    def remove_member(self, character: Character):
+    def remove_member(self, character: Personaje):
         if character in self.members:
             self.members.remove(character)
             self.guild_points = self.calculate_guild_points()
@@ -28,19 +28,19 @@ class Guild:
         self.__name = new_name
 
     @property
-    def members(self) -> List[Character]:
+    def members(self) -> List[Personaje]:
         return self.__members
 
     @members.setter
-    def members(self, new_members: List[Character]):
+    def members(self, new_members: List[Personaje]):
         self.__members = new_members
 
     @property
-    def guild_master(self) -> Character:
+    def guild_master(self) -> Personaje:
         return self.__guild_master
 
     @guild_master.setter
-    def guild_master(self, new_guild_master: Character):
+    def guild_master(self, new_guild_master: Personaje):
         self.__guild_master = new_guild_master
 
     @property

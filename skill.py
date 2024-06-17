@@ -1,11 +1,11 @@
-
+from personaje import Personaje
 
 class Skill():
-    def __init__(self,nombre:str,mana_cost:int,damage:int,cooldown:float):
-         self.__nombre = nombre
-         self.__mana_cost = mana_cost
-         self.__damage = damage
-         self.__cooldown = cooldown
+    def __init__(self,nombre:str,mana_cost:int,danio:int,cooldown:float):
+        self.__nombre = nombre
+        self.__mana_cost = mana_cost
+        self.__danio = danio
+        self.__cooldown = cooldown
     
     @property
     def nombre(self)->str:
@@ -22,11 +22,12 @@ class Skill():
         self.__mana_cost = new_mana_cost
     
     @property
-    def damage(self)->int:
-        return self.__damage
-    @damage.setter
-    def set__damage (self,new_damage:int)-> None:
-        self.__damage = new_damage
+    def danio(self)->int:
+        return self.__danio
+    
+    @danio.setter
+    def set__danio (self,new_danio:int)-> None:
+        self.__danio = new_danio
     
     @property
     def cooldown(self)->float:
@@ -34,3 +35,13 @@ class Skill():
     @cooldown.setter
     def set__cooldown (self,new_cooldown:float)-> None:
         self.__cooldown = new_cooldown
+
+    def cast(self, caster:Personaje, target:Personaje) -> None:
+        if caster.mana >= self.__mana_cost:
+            caster.mana -= self.__mana_cost
+            target.health -= self.__danio
+            print(f'{caster.nombre} lanza {self.__nombre} a {target.nombre}, causando {self.__danio} daño')
+        else:
+            print(f'{caster.nombre} no tiene suficiente mana para lanzar {self.__nombre}')
+    #tengo que pasar en skill dos cosas: el personaje que lanza casster y el personaje que recibe: target.
+    # si caster tiene suficieinte mana para lanzar la habilidad se reeduce su mana y se aplizca el daño a target y algo del tiempo 

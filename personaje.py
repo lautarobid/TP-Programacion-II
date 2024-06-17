@@ -9,10 +9,10 @@ class Personaje(ABC):
         self.level = level
         self.health = health
         self.mana = mana
-        self.strength = strength
-        self.agility = agility
-        self.vitality = vitality
-        self.energy = energy
+        self.fuerza = fuerza
+        self.agilidad = agilidad
+        self.vitalidad = vitalidad
+        self.energia = energia
         self.experience = experience
         self.equipment = []
 
