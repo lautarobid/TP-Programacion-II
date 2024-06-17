@@ -1,10 +1,10 @@
 from personaje import Personaje
 
 class Skill():
-    def __init__(self,nombre:str,mana_cost:int,danio:int,cooldown:float):
+    def __init__(self,nombre:str,mana_cost:int,daño:int,cooldown:float):
         self.__nombre = nombre
         self.__mana_cost = mana_cost
-        self.__danio = danio
+        self.__daño = daño
         self.__cooldown = cooldown
     
     @property
@@ -22,12 +22,12 @@ class Skill():
         self.__mana_cost = new_mana_cost
     
     @property
-    def danio(self)->int:
+    def daño(self)->int:
         return self.__danio
     
-    @danio.setter
-    def set__danio (self,new_danio:int)-> None:
-        self.__danio = new_danio
+    @daño.setter
+    def set__daño (self,new_daño:int)-> None:
+        self.__daño = new_daño
     
     @property
     def cooldown(self)->float:

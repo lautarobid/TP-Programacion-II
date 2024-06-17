@@ -1,5 +1,5 @@
 from skill import Skill
-
+from item import Item
 class TipoPersonaje():
     def __init__(self,nombre:str):
         self.__nombre = nombre
