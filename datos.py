@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Personaje = []
-=======
 from personaje import Wizard, Knight
 from skill import Skill
 from item import Item
@@ -40,4 +37,3 @@ quests = [quest1, quest2, quest3]
 
 # completar una quest
 quest1.complete_quest()
->>>>>>> 28ca59e3c8e64e7dd7a8e00dd302c7f997dbe2f8

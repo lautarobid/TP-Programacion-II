@@ -29,7 +29,7 @@ while True:
         pass
 
     elif opt == "4":
-        print("Te esperamos Pronto Mu Rosario.")
+        print("Gracias por utilizar nuestro sistema.")
         break
 
     else:
@@ -41,4 +41,3 @@ while True:
 #     tipo_personaje.add_skill(bola_fuego)
 #     for skill in tipo_personaje.skills:
 #         print(skill.nombre)
-
