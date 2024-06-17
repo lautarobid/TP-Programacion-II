@@ -20,3 +20,12 @@ while True:
 
     else:
         print("Error, Ingrese una opcion valida...")
+
+
+        
+# menu
+#     bola_fuego = Skill("Bola de Fuego", mana_cost=10, danio=25, cooldown=5.0)
+#     tipo_personaje = TipoPersonaje("Mago")
+#     tipo_personaje.add_skill(bola_fuego)
+#     for skill in tipo_personaje.skills:
+#         print(skill.nombre)

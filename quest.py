@@ -1,12 +1,11 @@
 from item import Item
+
 class Quest:
     def __init__(self, name: str, description: str, rewards: list[Item],quest_complete:bool = False):
         self.name = name
         self.description = description
         self.rewards = rewards
         self.quest_complete = False
-
-
 
     @property
     def name(self) -> str:
