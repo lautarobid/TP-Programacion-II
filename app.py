@@ -15,7 +15,7 @@ while True:
         pass
 
     elif opt == "4":
-        print("Gracias por utilizar nuestro sistema.")
+        print("Te esperamos Pronto Mu Rosario.")
         break
 
     else:
