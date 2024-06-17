@@ -29,3 +29,4 @@ while True:
 #     tipo_personaje.add_skill(bola_fuego)
 #     for skill in tipo_personaje.skills:
 #         print(skill.nombre)
+

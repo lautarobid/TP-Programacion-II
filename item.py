@@ -26,8 +26,8 @@ class Item():
 
     @property
     def attack_power(self)->int:
-
         return self.__attack_power
+    
     @attack_power.setter
     def set_attack_power (self,new_attack_power:int)-> None:
         self.__attack_power = new_attack_power
