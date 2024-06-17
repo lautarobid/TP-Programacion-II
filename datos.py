@@ -1,6 +1,7 @@
 from personaje import Wizard, Knight
 from skill import Skill
 from item import Item
+from quest import Quest
 
 
 #creo personajes
@@ -25,3 +26,14 @@ items = [
     Item(nombre='Pocion de Fuerza', tipo='Consumible', attack_power=20, defense=0, efect='Aumenta el ataque temporalmente'),
     Item(nombre='Pocion de Resistencia', tipo='Consumible', attack_power=0, defense=20, efect='Aumenta la defensa temporalmente'),
 ]
+
+# crear quests
+quest1 = Quest(name="La espada perdida", description="Encuentra y recupera la espada legendaria.", rewards=[items[0]])
+quest2 = Quest(name="Defiende el pueblo", description="Protege el pueblo del ataque de los goblins.", rewards=[items[2]])
+quest3 = Quest(name="Recolecta hierbas", description="Recolecta hierbas para crear pociones.", rewards=[items[3], items[4]])
+
+# lista de quests
+quests = [quest1, quest2, quest3]
+
+# completar una quest
+quest1.complete_quest()

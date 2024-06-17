@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from item import Item
-from tipopersonaje import TipoPersonaje
 from skill import Skill
 
 class Personaje(ABC):
@@ -23,14 +22,18 @@ class Personaje(ABC):
     @property 
     def nombre(self) -> str:
         return self.__nombre
+    
+    @nombre.setter
+    def nombre(self, new_nombre:str):
+        self.__nombre = new_nombre
 
     @abstractmethod
     def attack(self, target: 'Personaje'):
-        pass
+        print('ataque')
 
     @abstractmethod
-    def use_skill(self, skill: Skill, target: 'Personaje'):
-        pass
+    def use_skill(self, skill:Skill, target: 'Personaje'):
+        print('uss skill')
 
     def subir_nivel(self):
         self.nivel += 1
@@ -60,19 +63,19 @@ class Personaje(ABC):
 
 
 class Wizard(Personaje):
-    def attack(self, target: 'Personaje'):
+    def attack(self, target:Personaje):
         danio = self.energia * 2
         target.health -= danio
         print(f"{self.nombre} ataca a {target.nombre} causando {danio} daño.")
 
-    def use_skill(self, skill: Skill, target: 'Personaje'):
+    def use_skill(self, skill:Skill, target:Personaje):
         skill.cast(self, target)
 
 class Knight(Personaje):
-    def attack(self, target: 'Personaje'):
+    def attack(self, target:Personaje):
         danio = self.fuerza * 1.5
         target.health -= danio
         print(f"{self.nombre} ataca a {target.nombre} causando {danio} daño.")
 
-    def use_skill(self, skill: Skill, target: 'Personaje'):
+    def use_skill(self, skill:Skill, target:Personaje):
         skill.cast(self, target)

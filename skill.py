@@ -36,7 +36,7 @@ class Skill():
     def set__cooldown (self,new_cooldown:float)-> None:
         self.__cooldown = new_cooldown
 
-    def cast(self, caster: 'Personaje', target: 'Personaje') -> None:
+    def cast(self, caster:Personaje, target:Personaje) -> None:
         if caster.mana >= self.__mana_cost:
             caster.mana -= self.__mana_cost
             target.health -= self.__danio
