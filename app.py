@@ -18,12 +18,13 @@ def mostrar_quest():
 
 def menu():
     return """
-    Menú:1
+    Menú:
     1. Crear personaje
     2. Mostrar personaje con más level
     3. Mostrar guild con más puntos
-    4. Buscar tu personaje completo o no la quest
-    5. Gracias por ingresar a MU Rosario
+    4. Buscar tu personaje
+    5. Pelear
+    6. Gracias por ingresar a MU Rosario
     """
 
 def crear_personaje():
@@ -37,7 +38,7 @@ def mostrar_guild_mas_puntos():
 
 def buscar_personaje_quest():
     print("Buscando tu personaje completo o no la quest...")
-
+    
 while True:
     print(menu())
     opt = input("Ingrese la opcion seleccionada: ")
@@ -50,6 +51,8 @@ while True:
     elif opt == "4":
         buscar_personaje_quest()
     elif opt == "5":
+        pelear_contra_random()
+    elif opt == "6":
         print("Gracias por ingresar a MU Rosario.")
         break
     else:
