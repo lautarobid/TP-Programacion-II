@@ -3,6 +3,8 @@ from skill import Skill
 from item import Item
 from quest import Quest
 
+#Personakes
+Wizard 
 
 #creo personajes
 rune = Wizard('Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experience=200)

@@ -1,4 +1,5 @@
 from datos import *
+from personaje import *
 
 def mostrar_items():
     for item in items:
@@ -15,29 +16,44 @@ def mostrar_quest():
         for reward in quest.rewards:
             print(f"- {reward.nombre}")
 
-def menu ():
-    return "\n1 - Crear Personaje \n2 - Ranking Personaje\n3 - Ranking Guilds\n4 - Salir"
+def menu():
+    return """
+    Menú:1
+    1. Crear personaje
+    2. Mostrar personaje con más level
+    3. Mostrar guild con más puntos
+    4. Buscar tu personaje completo o no la quest
+    5. Gracias por ingresar a MU Rosario
+    """
+
+def crear_personaje():
+    print("Creando personaje...")
+
+def mostrar_personaje_mas_level():
+    print("Mostrando personaje con más level...")
+
+def mostrar_guild_mas_puntos():
+    print("Mostrando guild con más puntos...")
+
+def buscar_personaje_quest():
+    print("Buscando tu personaje completo o no la quest...")
 
 while True:
-
     print(menu())
     opt = input("Ingrese la opcion seleccionada: ")
-
     if opt == "1":
-        pass
-    
+        crear_personaje()
     elif opt == "2":
-        mostrar_items()
+        mostrar_personaje_mas_level()
     elif opt == "3":
-        mostrar_quest()
-
+        mostrar_guild_mas_puntos()
     elif opt == "4":
-        print("Gracias por utilizar nuestro sistema.")
+        buscar_personaje_quest()
+    elif opt == "5":
+        print("Gracias por ingresar a MU Rosario.")
         break
-
     else:
-        print("Error, Ingrese una opcion valida...")
-
+        print("Error, Ingrese una opción válida...")
 # menu
 #     bola_fuego = Skill("Bola de Fuego", mana_cost=10, danio=25, cooldown=5.0)
 #     tipo_personaje = TipoPersonaje("Mago")
