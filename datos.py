@@ -14,14 +14,14 @@ escudo = Skill('Escudo', mana_cost=12, danio=0, cooldown=6.0)
 curar = Skill('Curacion', mana_cost=8, danio=-20, cooldown=4.0)
 
 #personaje usa habilidad
-rune.use_skill(bola_fuego, blade)  
-blade.use_skill(curar, blade) 
-rune.use_skill(escudo, rune) 
+# rune.use_skill(bola_fuego, blade)  
+# blade.use_skill(curar, blade) 
+# rune.use_skill(escudo, rune) 
 
 #items
 items = [
-    Item(nombre='Espada', tipo='arma', attack_power=50, defense=50, efect='Aumenta velocidad de ataque'),
-    Item(nombre='Arco', tipo='arma', attack_power=40, defense=5, efect='Aumenta la precision'),
+    Item(nombre='Espada', tipo='Arma', attack_power=50, defense=50, efect='Aumenta velocidad de ataque'),
+    Item(nombre='Arco', tipo='Arma', attack_power=40, defense=5, efect='Aumenta la precision'),
     Item(nombre='armadura', tipo='Defensa', attack_power=5, defense=45, efect='Regenera salud'),
     Item(nombre='Pocion de Fuerza', tipo='Consumible', attack_power=20, defense=0, efect='Aumenta el ataque temporalmente'),
     Item(nombre='Pocion de Resistencia', tipo='Consumible', attack_power=0, defense=20, efect='Aumenta la defensa temporalmente'),

@@ -1,16 +1,19 @@
 from datos import *
-from item import Item
 
 def mostrar_items():
-    for item in enumerate(items,1):
-        print(f'{item} - {item.nombre} - {item.tipo} {item.efect}')
+    for item in items:
+        print(f'''[-]{item.nombre} 
+              [TIPO]: {item.tipo} 
+              [ATAQUE]:  {item.attack_power} 
+              [DEFENSA]: {item.defense} 
+              [EFECTO]: {item.efect}''')
 
-# def mostrar_quest():
-#     for quest in quests:
-#         print(f"Quest: {quest.name}, Completada: {quest.is_completed()}")
-#         print("Recompensas:")
-#         for reward in quest.rewards:
-#             print(f"- {reward.nombre}")
+def mostrar_quest():
+    for quest in quests:
+        print(f"Quest: {quest.name}, Completada: {quest.is_completed()}")
+        print("Recompensas:")
+        for reward in quest.rewards:
+            print(f"- {reward.nombre}")
 
 def menu ():
     return "\n1 - Crear Personaje \n2 - Ranking Personaje\n3 - Ranking Guilds\n4 - Salir"
@@ -26,7 +29,7 @@ while True:
     elif opt == "2":
         mostrar_items()
     elif opt == "3":
-        pass
+        mostrar_quest()
 
     elif opt == "4":
         print("Gracias por utilizar nuestro sistema.")
