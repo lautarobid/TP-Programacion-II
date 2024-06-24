@@ -44,6 +44,7 @@ class Personaje(ABC):
         self.vitalidad += 3
         self.energia += 2
         print(f"{self.nombre} subio de nivel a: {self.nivel}!")
+    
 
     def equipar_item(self, item: Item):
         self.equipment.append(item)

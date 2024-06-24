@@ -4,11 +4,11 @@ from item import Item
 from quest import Quest
 from monstruos import Monstruos
 
-
 #creo personajes
-rune = Wizard('Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experience=200)
-blade = Knight('Blade Knight', nivel=9, health=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experience=150)
+rune = Wizard(nombre='Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experience=200)
+blade = Knight(nombre='Blade Knight', nivel=9, health=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experience=150)
 
+personajes = [rune, blade]
 #creo habilidad
 bola_fuego = Skill('Bola de fuego', mana_cost=10, danio=25, cooldown=5.0)
 bola_hielo = Skill('Bola de hielo', mana_cost=12, danio=20, cooldown=6.0)
