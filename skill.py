@@ -35,12 +35,12 @@ class Skill():
     def cooldown (self,new_cooldown:float)-> None:
         self.__cooldown = new_cooldown
 
-    def cast(self, caster, target) -> None:
-        if caster.mana >= self.__mana_cost:
-            caster.mana -= self.__mana_cost
-            target.health -= self.__danio
-            print(f'{caster.nombre} lanza {self.__nombre} a {target.nombre}, causando {self.__danio} daño')
-        else:
-            print(f'{caster.nombre} no tiene suficiente mana para lanzar {self.__nombre}')
-    #tengo que pasar en skill dos cosas: el personaje que lanza casster y el personaje que recibe: target.
-    # si caster tiene suficieinte mana para lanzar la habilidad se reeduce su mana y se aplizca el daño a target y algo del tiempo 
+    # def cast(self, caster, target) -> None:
+    #     if caster.mana >= self.__mana_cost:
+    #         caster.mana -= self.__mana_cost
+    #         target.health -= self.__danio
+    #         print(f'{caster.nombre} lanza {self.__nombre} a {target.nombre}, causando {self.__danio} daño')
+    #     else:
+    #         print(f'{caster.nombre} no tiene suficiente mana para lanzar {self.__nombre}')
+    # #tengo que pasar en skill dos cosas: el personaje que lanza casster y el personaje que recibe: target.
+    # # si caster tiene suficieinte mana para lanzar la habilidad se reeduce su mana y se aplizca el daño a target y algo del tiempo 

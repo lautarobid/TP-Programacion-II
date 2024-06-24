@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import List
 from item import Item
 from skill import Skill
 
@@ -16,8 +17,7 @@ class Personaje(ABC):
         self.vitalidad = vitalidad
         self.energia = energia
         self.experience = experience
-        self.equipment = []
-        # self.equipment: List[Item] = []
+        self.equipment: List[Item] = []
 
     @property 
     def nombre(self) -> str:
@@ -27,13 +27,13 @@ class Personaje(ABC):
     def nombre(self, new_nombre:str):
         self.__nombre = new_nombre
 
-    @abstractmethod
-    def attack(self, target: 'Personaje'):
-        print('ataque')
+    # @abstractmethod
+    # def attack(self, target: 'Personaje'):
+    #     print('ataque')
 
-    @abstractmethod
-    def use_skill(self, skill:Skill, target: 'Personaje'):
-        print('uss skill')
+    # @abstractmethod
+    # def use_skill(self, skill:Skill, target: 'Personaje'):
+    #     print('usa skill')
 
     def subir_nivel(self):
         self.nivel += 1

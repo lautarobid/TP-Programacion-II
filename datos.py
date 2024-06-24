@@ -1,20 +1,20 @@
-from personaje import Wizard, Knight,Elf
+from personaje import Wizard, Knight
 from skill import Skill
 from item import Item
 from quest import Quest
+from monstruos import Monstruos
 
-#Personakes
-Wizard 
 
 #creo personajes
 rune = Wizard('Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experience=200)
 blade = Knight('Blade Knight', nivel=9, health=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experience=150)
-geri=Elf()
+
 #creo habilidad
 bola_fuego = Skill('Bola de fuego', mana_cost=10, danio=25, cooldown=5.0)
-escudo = Skill('Escudo', mana_cost=12, danio=0, cooldown=6.0)
-curar = Skill('Curacion', mana_cost=8, danio=-20, cooldown=4.0)
+bola_hielo = Skill('Bola de hielo', mana_cost=12, danio=20, cooldown=6.0)
+rayo = Skill('Rayo', mana_cost=8, danio=20, cooldown=4.0)
 
+habilidades = [bola_fuego, bola_hielo, rayo]
 #personaje usa habilidad
 # rune.use_skill(bola_fuego, blade)  
 # blade.use_skill(curar, blade) 
@@ -39,3 +39,10 @@ quests = [quest1, quest2, quest3]
 
 # completar una quest
 quest1.complete_quest()
+
+# monstruos
+dragon = Monstruos('Dragon', 'Fuego', 100, 20, 10, 5)
+arania = Monstruos('Arania', 'Veneno', 50, 10, 5, 10)
+orco = Monstruos('Orco', 'Fuerza', 80, 15, 8, 8)
+
+lista_monstruos = [dragon, arania, orco]
