@@ -27,13 +27,13 @@ class Personaje(ABC):
     def nombre(self, new_nombre:str):
         self.__nombre = new_nombre
 
-    # @abstractmethod
-    # def attack(self, target: 'Personaje'):
-    #     print('ataque')
+    @abstractmethod
+    def attack(self, target: 'Personaje'):
+        print('ataque')
 
-    # @abstractmethod
-    # def use_skill(self, skill:Skill, target: 'Personaje'):
-    #     print('usa skill')
+    @abstractmethod
+    def use_skill(self, skill:Skill, target: 'Personaje'):
+        print('usa skill')
 
     def subir_nivel(self):
         self.nivel += 1
@@ -71,6 +71,9 @@ class Wizard(Personaje):
 
     def use_skill(self, skill:Skill, target:Personaje):
         skill.cast(self, target)
+    
+    def __str__(self) -> str:
+        return f'{self.nombre}'
 
 class Knight(Personaje):
     def attack(self, target:Personaje):
@@ -80,3 +83,6 @@ class Knight(Personaje):
 
     def use_skill(self, skill:Skill, target:Personaje):
         skill.cast(self, target)
+
+    def __str__(self) -> str:
+        return f'{self.nombre}'

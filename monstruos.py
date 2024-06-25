@@ -1,7 +1,5 @@
 from personaje import *
-from abc import ABC, abstractmethod
 from skill import Skill
-from item import Item
 
 class Monstruos():
     def __init__(self, nombre:str, tipo:str, vida:int, ataque:int, defensa:int, velocidad:int):
@@ -15,10 +13,6 @@ class Monstruos():
     @property 
     def nombre(self) -> str:
         return self.__nombre
-    
-    @nombre.setter
-    def nombre(self, new_nombre:str):
-        self.__nombre = new_nombre
     
     @property 
     def tipo(self) -> str:
@@ -94,7 +88,6 @@ class Monstruos():
         else:
             print(f"{personaje.nombre} ha sido derrotado.")
         
-
 
     def __str__(self):
         return f"Nombre: {self.nombre} \nTipo: {self.tipo} \nVida: {self.vida} \nAtaque: {self.ataque} \nDefensa: {self.defensa} \nVelocidad: {self.velocidad}"

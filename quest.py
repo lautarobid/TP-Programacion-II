@@ -1,7 +1,7 @@
 from item import Item
 
 class Quest:
-    def __init__(self, name: str, description: str, rewards: list[Item],quest_complete:bool = False):
+    def __init__(self, name: str, description: str, rewards:str):
         self.name = name
         self.description = description
         self.rewards = rewards
@@ -24,11 +24,11 @@ class Quest:
         self.__description = new_description
 
     @property
-    def rewards(self) -> list:
+    def rewards(self) -> str:
         return self.__rewards
 
     @rewards.setter
-    def rewards(self, new_rewards: list) -> None:
+    def rewards(self, new_rewards: str) -> None:
         self.__rewards = new_rewards
 
     def complete_quest(self):

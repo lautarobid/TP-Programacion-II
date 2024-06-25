@@ -9,16 +9,13 @@ rune = Wizard(nombre='Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agil
 blade = Knight(nombre='Blade Knight', nivel=9, health=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experience=150)
 
 personajes = [rune, blade]
+
 #creo habilidad
 bola_fuego = Skill('Bola de fuego', mana_cost=10, danio=25, cooldown=5.0)
 bola_hielo = Skill('Bola de hielo', mana_cost=12, danio=20, cooldown=6.0)
 rayo = Skill('Rayo', mana_cost=8, danio=20, cooldown=4.0)
 
 habilidades = [bola_fuego, bola_hielo, rayo]
-#personaje usa habilidad
-# rune.use_skill(bola_fuego, blade)  
-# blade.use_skill(curar, blade) 
-# rune.use_skill(escudo, rune) 
 
 #items
 items = [
@@ -30,15 +27,12 @@ items = [
 ]
 
 # crear quests
-quest1 = Quest(name="La espada perdida", description="Encuentra y recupera la espada legendaria.", rewards=[items[0]])
-quest2 = Quest(name="Defiende el pueblo", description="Protege el pueblo del ataque de los goblins.", rewards=[items[2]])
-quest3 = Quest(name="Recolecta hierbas", description="Recolecta hierbas para crear pociones.", rewards=[items[3], items[4]])
+quest1 = Quest(name="La espada perdida", description="Encuentra y recupera la espada legendaria matando 3 dragones", rewards=items[0])
+quest2 = Quest(name="Defiende el pueblo", description="Protege el pueblo del ataque de las arañas. Mata 3 arañas", rewards=items[2])
+quest3 = Quest(name="La invasion", description="Detiene a los orcos. Mata 3 Orcos.", rewards=items[1])
 
 # lista de quests
-quests = [quest1, quest2, quest3]
-
-# completar una quest
-quest1.complete_quest()
+lista_quest = [quest1, quest2, quest3]
 
 # monstruos
 dragon = Monstruos('Dragon', 'Fuego', 100, 20, 10, 5)
@@ -46,3 +40,7 @@ arania = Monstruos('Arania', 'Veneno', 50, 10, 5, 10)
 orco = Monstruos('Orco', 'Fuerza', 80, 15, 8, 8)
 
 lista_monstruos = [dragon, arania, orco]
+
+contador_dragones = 0
+contador_orcos = 0
+contador_aranias = 0

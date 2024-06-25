@@ -1,5 +1,3 @@
-
-
 class Item():    
     def __init__(self,nombre:str,tipo:str,attack_power:int,defense:int,efect:str):
         self.__nombre = nombre
@@ -47,3 +45,11 @@ class Item():
     @efect.setter
     def efect (self,new_efect:str)-> None:
         self.__efect = new_efect  
+    
+    def __str__(self):
+        return f'''
+                   Nombre: {self.nombre} 
+                   Tipo: {self.tipo} 
+                   Poder de Ataque: {self.attack_power} 
+                   Defensa: {self.defense} 
+                   Efecto: {self.efect}'''
