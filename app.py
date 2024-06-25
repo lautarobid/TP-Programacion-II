@@ -98,7 +98,7 @@ def menu():
     3. Mostrar personajes
     4. Mostrar items
     5. Pelear
-    6. Gracias por ingresar a MU Rosario
+    6. Salir de MU Rosario
     """
     
 while True:
@@ -117,7 +117,7 @@ while True:
         monstruo_seleccionado = mostrar_monstruos()
         Monstruos.pelea(monstruo_seleccionado, rune, habilidad_seleccionada)
     elif opt == "6":
-        print("Gracias por ingresar a MU Rosario.")
+        print("Gracias por elegir MU Rosario.")
         break
     else:
         print("Error, Ingrese una opción válida...")
