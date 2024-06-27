@@ -1,5 +1,4 @@
 from datos import *
-from personaje import *
 
 def crear_personaje():
     while True:
