@@ -1,11 +1,9 @@
-from item import Item
-
 class Quest:
-    def __init__(self, name: str, description: str, rewards:str):
-        self.name = name
-        self.description = description
-        self.rewards = rewards
-        self.quest_complete = False
+    def __init__(self, name: str, description: str, rewards:str, quest_complete:bool=False):
+        self.__name = name
+        self.__description = description
+        self.__rewards = rewards
+        self.__quest_complete = quest_complete
 
     @property
     def name(self) -> str:

@@ -27,11 +27,11 @@ class Personaje(ABC):
     def nombre(self, new_nombre:str):
         self.__nombre = new_nombre
 
-    @abstractmethod
+    @abstractmethod # ver lo de metodo abstracto
     def attack(self, target: 'Personaje'):
         print('ataque')
 
-    @abstractmethod
+    @abstractmethod # ver lo de metodo abstracto
     def use_skill(self, skill:Skill, target: 'Personaje'):
         print('usa skill')
 
@@ -61,28 +61,3 @@ class Personaje(ABC):
             raise RuntimeError('ERROR- NOMBRE REGISTRADO')
         cls.__nombres_registrados.add(nombre)
         return nombre
-
-
-class Wizard(Personaje):
-    def attack(self, target:Personaje):
-        danio = self.energia * 2
-        target.health -= danio
-        print(f"{self.nombre} ataca a {target.nombre} causando {danio} daño.")
-
-    def use_skill(self, skill:Skill, target:Personaje):
-        skill.cast(self, target)
-    
-    def __str__(self) -> str:
-        return f'{self.nombre}'
-
-class Knight(Personaje):
-    def attack(self, target:Personaje):
-        danio = self.fuerza * 1.5
-        target.health -= danio
-        print(f"{self.nombre} ataca a {target.nombre} causando {danio} daño.")
-
-    def use_skill(self, skill:Skill, target:Personaje):
-        skill.cast(self, target)
-
-    def __str__(self) -> str:
-        return f'{self.nombre}'

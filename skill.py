@@ -43,4 +43,4 @@ class Skill():
     #     else:
     #         print(f'{caster.nombre} no tiene suficiente mana para lanzar {self.__nombre}')
     # #tengo que pasar en skill dos cosas: el personaje que lanza casster y el personaje que recibe: target.
-    # # si caster tiene suficieinte mana para lanzar la habilidad se reeduce su mana y se aplizca el daño a target y algo del tiempo 
+    # # si caster tiene suficieinte mana para lanzar la habilidad se reeduce su mana y se aplizca el daño a target y algo del tiempo
