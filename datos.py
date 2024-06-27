@@ -1,4 +1,5 @@
-from personaje import Wizard, Knight
+from knight import Knight
+from wizard import Wizard
 from skill import Skill
 from item import Item
 from quest import Quest

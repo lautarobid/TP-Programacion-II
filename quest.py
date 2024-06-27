@@ -30,7 +30,7 @@ class Quest:
         self.__rewards = new_rewards
 
     def complete_quest(self):
-        self.quest_complete = True
+        self.__quest_complete = True
 
     def is_completed(self) -> bool:
-        return self.quest_complete
+        return self.__quest_complete

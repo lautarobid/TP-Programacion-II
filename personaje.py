@@ -27,13 +27,6 @@ class Personaje(ABC):
     def nombre(self, new_nombre:str):
         self.__nombre = new_nombre
 
-    @abstractmethod # ver lo de metodo abstracto
-    def attack(self, target: 'Personaje'):
-        print('ataque')
-
-    @abstractmethod # ver lo de metodo abstracto
-    def use_skill(self, skill:Skill, target: 'Personaje'):
-        print('usa skill')
 
     def subir_nivel(self):
         self.nivel += 1
