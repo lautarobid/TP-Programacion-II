@@ -76,6 +76,7 @@ class Monstruos():
         print(f"La vida de {self.nombre} es de {self.vida}")
     
     def pelea(self, personaje:Personaje, skill:Skill):
+        vida_inicial = self.vida
         print(f"Pelear contra {self.nombre}...")
         print("----------------------------------------------")
         while self.vida >  0 and personaje.health > 0:
@@ -85,6 +86,7 @@ class Monstruos():
                 print("----------------------------------------------")
         if self.vida <= 0:
             print(f"{self.nombre} ha sido derrotado.")
+            self.vida = vida_inicial
         else:
             print(f"{personaje.nombre} ha sido derrotado.")
         
