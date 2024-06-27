@@ -92,8 +92,8 @@ def mostrar_inventario():
         print(f'''
             [NOMBRE]: {personaje.nombre}
             [INVENTARIO]: ''')
-        if personaje.equipment:
-            for item in personaje.equipment:
+        if personaje.equipamiento:
+            for item in personaje.equipamiento:
                 print(f"\n{item}")
         else:
             print("El inventario está vacío.")
@@ -129,7 +129,7 @@ while True:
             print(menu2())
             num = input("Ingrese la opcion seleccionada: ")
             if num == "1":
-                mostrar lista_mision()
+                mostrar_misiones()
                 print("-------------------------------------------------------------------------------------")
             elif num == "2":
                 mostrar_articulos()
@@ -163,12 +163,12 @@ while True:
                 elif contador_aranias == 3:
                     print(f"Felicidades, has completado la mision {mision2.nombre}")
                     mision2.mision_completada()
-                    print(f"Tu recompensa es: {mision2.rewards}")
+                    print(f"Tu recompensa es: {mision2.recompensa}")
                     personaje_seleccionado.equipar_articulo(mision2.recompensa)
                 elif contador_orcos == 3:
                     print(f"Felicidades, has completado la mision {mision3.nombre}")
                     mision3.mision_completada()
-                    print(f"Tu recompensa es: {mision3.rewards}")
+                    print(f"Tu recompensa es: {mision3.recompensa}")
                     personaje_seleccionado.equipar_articulo(mision3.recompensa)                  
             elif num == "5":
                 print("Gracias por elegir MU Rosario.")
