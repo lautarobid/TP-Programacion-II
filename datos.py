@@ -1,39 +1,39 @@
-from knight import Knight
-from wizard import Wizard
-from skill import Skill
-from item import Item
-from quest import Quest
+from caballero import Caballero
+from mago import Mago
+from habilidad import Habilidad
+from articulo import Articulo
+from mision import Mision
 from monstruos import Monstruos
 
 #creo personajes
-rune = Wizard(nombre='Rune Wizard', nivel=7, health=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experience=200)
-blade = Knight(nombre='Blade Knight', nivel=9, health=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experience=150)
+mago = Mago(nombre='Rune Wizard', nivel=7, vida=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experiencia=200)
+caballero = Caballero(nombre='Blade Knight', nivel=9, vida=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experiencia=150)
 
-personajes = [rune, blade]
+personajes = [mago, caballero]
 
 #creo habilidad
-bola_fuego = Skill('Bola de fuego', mana_cost=10, danio=25, cooldown=5.0)
-bola_hielo = Skill('Bola de hielo', mana_cost=12, danio=20, cooldown=6.0)
-rayo = Skill('Rayo', mana_cost=8, danio=20, cooldown=4.0)
+bola_fuego = Habilidad('Bola de fuego', mana_costo=10, danio=25, enfriamiento=5.0)
+bola_hielo = Habilidad('Bola de hielo', mana_costo=12, danio=20, enfriamiento=6.0)
+rayo = Habilidad('Rayo', mana_costo=8, danio=20, enfriamiento=4.0)
 
 habilidades = [bola_fuego, bola_hielo, rayo]
 
 #items
-items = [
-    Item(nombre='Espada', tipo='Arma', attack_power=50, defense=50, efect='Aumenta velocidad de ataque'),
-    Item(nombre='Arco', tipo='Arma', attack_power=40, defense=5, efect='Aumenta la precision'),
-    Item(nombre='armadura', tipo='Defensa', attack_power=5, defense=45, efect='Regenera salud'),
-    Item(nombre='Pocion de Fuerza', tipo='Consumible', attack_power=20, defense=0, efect='Aumenta el ataque temporalmente'),
-    Item(nombre='Pocion de Resistencia', tipo='Consumible', attack_power=0, defense=20, efect='Aumenta la defensa temporalmente'),
+articulos = [
+    Articulo(nombre='Espada', tipo='Arma', poder_ataque=50, defensa=50, efecto='Aumenta velocidad de ataque'),
+    Articulo(nombre='Arco', tipo='Arma', poder_ataque=40, defensa=5, efecto='Aumenta la precision'),
+    Articulo(nombre='armadura', tipo='Defensa', poder_ataque=5, defensa=45, efecto='Regenera salud'),
+    Articulo(nombre='Pocion de Fuerza', tipo='Consumible', poder_ataque=20, defensa=0, efecto='Aumenta el ataque temporalmente'),
+    Articulo(nombre='Pocion de Resistencia', tipo='Consumible', poder_ataque=0, defensa=20, efecto='Aumenta la defensa temporalmente'),
 ]
 
 # crear quests
-quest1 = Quest(name="La espada perdida", description="Encuentra y recupera la espada legendaria matando 3 dragones", rewards=items[0])
-quest2 = Quest(name="Defiende el pueblo", description="Protege el pueblo del ataque de las arañas. Mata 3 arañas", rewards=items[2])
-quest3 = Quest(name="La invasion", description="Detiene a los orcos. Mata 3 Orcos.", rewards=items[1])
+mision1 = Mision(nombre="La espada perdida", descripcion="Encuentra y recupera la espada legendaria matando 3 dragones", recompensa=articulos[0])
+mision2 = Mision(nombre="Defiende el pueblo", descripcion="Protege el pueblo del ataque de las arañas. Mata 3 arañas", recompensa=articulos[2])
+mision3 = Mision(nombre="La invasion", descripcion="Detiene a los orcos. Mata 3 Orcos.", recompensa=articulos[1])
 
 # lista de quests
-lista_quest = [quest1, quest2, quest3]
+lista_quest = [mision1, mision2, mision3]
 
 # monstruos
 dragon = Monstruos('Dragon', 'Fuego', 100, 20, 10, 5)

@@ -10,12 +10,12 @@ def crear_personaje():
     
     print("Seleccione el tipo de personaje: ")
     print("1. Mago")
-    print("2. Guerrero")
+    print("2. Caballero")
     clase = input("Ingrese el tipo de su personaje: ")
     if clase == '1':
-        nuevo_personaje = Wizard(nombre=nombre, nivel= 1, health=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experience=200)
+        nuevo_personaje = Mago(nombre=nombre, nivel= 1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
     elif clase == '2':
-        nuevo_personaje = Knight(nombre=nombre, nivel=1,  health=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experience=150)
+        nuevo_personaje = Caballero(nombre=nombre, nivel=1,  vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
     personajes.append(nuevo_personaje)
     print(f"Personaje [{nuevo_personaje.nombre}] creado!")
     return nuevo_personaje
@@ -26,14 +26,14 @@ def nombre_ya_registrado(nombre: str) -> bool:
             return True
     return False
 
-def mostrar_items():
-    for item in items:
+def mostrar_articulos():
+    for Articulo in articulos:
         print(f'''
-              [-]{item.nombre} 
-              [TIPO]: {item.tipo} 
-              [ATAQUE]:  {item.attack_power} 
-              [DEFENSA]: {item.defense} 
-              [EFECTO]: {item.efect}''')
+              [-]{articulos.nombre} 
+              [TIPO]: {articulos.tipo} 
+              [ATAQUE]:  {articulos.poder_ataque} 
+              [DEFENSA]: {articulos.defensa} 
+              [EFECTO]: {articulos.efecto}''')
 
 def mostrar_personajes():
     for idx, personaje in enumerate(personajes,1):

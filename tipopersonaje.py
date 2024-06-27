@@ -1,9 +1,8 @@
-from skill import Skill
-from item import Item
+from habilidad import Habilidad
 class TipoPersonaje():
     def __init__(self,nombre:str):
         self.__nombre = nombre
-        self.__skills = []
+        self.__habilidades = []
     
     @property
     def nombre(self)->str:
@@ -14,9 +13,9 @@ class TipoPersonaje():
         self.__nombre = new_nombre
 
     @property 
-    def skills(self) -> list:
-        return self.__skills
+    def habilidades(self) -> list:
+        return self.__habilidades
     
-    def add_skills(self, skill: Skill) -> None:
-        self.__skills.append(skill)
-        print(f'Habilidad {skill.nombre} fue añadida a {self.nombre}') 
+    def añadir_habilidad(self, habilidad: Habilidad) -> None:
+        self.__habilidades.append(habilidad)
+        print(f'Habilidad {habilidad.nombre} fue añadida a {self.__nombre}') 

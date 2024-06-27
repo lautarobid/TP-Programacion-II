@@ -1,5 +1,5 @@
 from personaje import *
-from skill import Skill
+from habilidad import Habilidad
 
 class Monstruos():
     def __init__(self, nombre:str, tipo:str, vida:int, ataque:int, defensa:int, velocidad:int):
@@ -55,44 +55,44 @@ class Monstruos():
         self.__velocidad = new_velocidad
 
     def atacar(self, Personaje:Personaje):
-        Personaje.health -= self.ataque - Personaje.agilidad
-        if Personaje.health < 0:
-            Personaje.health = 0
-        print(f"{self.nombre} ataco a {Personaje.nombre} por {self.ataque - Personaje.agilidad} de daño")
-        print(f"La vida de {Personaje.nombre} es de {Personaje.health}")
+        Personaje.__vida -= self.__ataque - Personaje.__agilidad
+        if Personaje.__vida < 0:
+            Personaje.__vida = 0
+        print(f"{self.__nombre} ataco a {Personaje.__nombre} por {self.__ataque - Personaje.__agilidad} de daño")
+        print(f"La vida de {Personaje.__nombre} es de {Personaje.__vida}")
 
-    def recibir_ataque(self, Personaje:Personaje):
-        self.vida -= Personaje.fuerza - self.defensa
-        if self.vida < 0:
-            self.vida = 0
-        print(f"{Personaje.nombre} ataco a {self.nombre} por {Personaje.fuerza - self.defensa} de daño")
-        print(f"La vida de {self.nombre} es de {self.vida}")
+    def recibir_ataque(self, personaje:Personaje):
+        self.__vida -= personaje.__fuerza - self.__defensa
+        if self.__vida < 0:
+            self.__vida = 0
+        print(f"{personaje.__nombre} ataco a {self.__nombre} por {personaje.__fuerza - self.__defensa} de daño")
+        print(f"La vida de {self.__nombre} es de {self.__vida}")
     
-    def recibir_skill(self, Personaje:Personaje, skill:Skill):
-        self.vida -= skill.danio - self.defensa
-        if self.vida < 0:
-            self.vida = 0
-        print(f"{Personaje.nombre} uso {skill.nombre} a {self.nombre} por {skill.danio} de daño")
-        print(f"La vida de {self.nombre} es de {self.vida}")
+    def recibir_habilidad(self, personaje:Personaje, habilidad:Habilidad):
+        self.__vida -= habilidad.__danio - self.__defensa
+        if self.__vida < 0:
+            self.__vida = 0
+        print(f"{personaje.__nombre} uso {habilidad.__nombre} a {self.__nombre} por {habilidad.__danio} de daño")
+        print(f"La vida de {self.__nombre} es de {self.__vida}")
     
-    def pelea(self, personaje:Personaje, skill:Skill):
-        vida_inicial = self.vida
-        print(f"Pelear contra {self.nombre}...")
+    def pelea(self, personaje:Personaje, habilidad:Habilidad):
+        vida_inicial = self.__vida
+        print(f"Pelear contra {self.__nombre}...")
         print("----------------------------------------------")
-        while self.vida >  0 and personaje.health > 0:
-                self.recibir_skill(personaje, skill)
-                if self.vida > 0:
+        while self.__vida >  0 and personaje.__vida > 0:
+                self.recibir_habilidad(personaje, habilidad)
+                if self.__vida > 0:
                     self.atacar(personaje)
                 print("----------------------------------------------")
-        if self.vida <= 0:
-            print(f"{self.nombre} ha sido derrotado.")
-            self.vida = vida_inicial
+        if self.__vida <= 0:
+            print(f"{self.__nombre} ha sido derrotado.")
+            self.__vida = vida_inicial
         else:
-            print(f"{personaje.nombre} ha sido derrotado.")
+            print(f"{personaje.__nombre} ha sido derrotado.")
         
 
     def __str__(self):
-        return f"Nombre: {self.nombre} \nTipo: {self.tipo} \nVida: {self.vida} \nAtaque: {self.ataque} \nDefensa: {self.defensa} \nVelocidad: {self.velocidad}"
+        return f"Nombre: {self.__nombre} \nTipo: {self.__tipo} \nVida: {self.__vida} \nAtaque: {self.__ataque} \nDefensa: {self.__defensa} \nVelocidad: {self.__velocidad}"
     
 class Dragon(Monstruos):
     pass
