@@ -64,28 +64,28 @@ def mostrar_habilidades():
     return habilidades[habilidad_idx]
 
 def mostrar_monstruos():
-    for idx, monster in enumerate(lista_monstruos, 1): 
+    for idx, Monstruos in enumerate(lista_monstruos, 1): 
             print(f'''
             [{idx}]
-            [NOMBRE]: {monster.nombre} 
-            [TIPO]: {monster.tipo} 
-            [VIDA]:  {monster.vida} 
-            [ATAQUE]:  {monster.ataque}             
-            [DEFENSA]:  {monster.defensa} 
-            [VELOCIDAD]: {monster.velocidad}''')
-    monster_idx = int(input("Ingrese el numero del monstruo a elegir: ")) -1
-    return lista_monstruos[monster_idx]
+            [NOMBRE]: {Monstruos.nombre} 
+            [TIPO]: {Monstruos.tipo} 
+            [VIDA]:  {Monstruos.vida} 
+            [ATAQUE]:  {Monstruos.ataque}             
+            [DEFENSA]:  {Monstruos.defensa} 
+            [VELOCIDAD]: {Monstruos.velocidad}''')
+    Monstruos_idx = int(input("Ingrese el numero del monstruo a elegir: ")) -1
+    return lista_monstruos[Monstruos_idx]
 
-def mostrar_quest():
-    for idx, quest in enumerate(lista_quest, 1): 
+def mostrar_misiones():
+    for idx, Mision in enumerate(lista_mision, 1): 
         print(f'''
             [{idx}]
-            [QUEST]: {quest.name} 
-            [DESCRIPCION]: {quest.description}
-            [RECOMPENSA]:  {quest.rewards}''')
+            [QUEST]: {Mision.nombre} 
+            [DESCRIPCION]: {Mision.descripcion}
+            [RECOMPENSA]:  {Mision.recompensa}''')
         print('------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
-    quest_idx = int(input('Ingrese el numero de la quest: '))-1
-    return lista_quest[quest_idx]
+    Mision_idx = int(input('Ingrese el numero de la quest: '))-1
+    return lista_mision[Mision_idx]
 
 def mostrar_inventario():
     for personaje in personajes:
@@ -129,7 +129,7 @@ while True:
             print(menu2())
             num = input("Ingrese la opcion seleccionada: ")
             if num == "1":
-                mostrar_quest()
+                mostrar lista_mision()
                 print("-------------------------------------------------------------------------------------")
             elif num == "2":
                 mostrar_articulos()
@@ -159,7 +159,7 @@ while True:
                         print(f"Felicidades, has completado la mision {mision1.nombre}")
                         mision1.mision_completada()
                         print(f"Tu recompensa es: {mision1.recompensa}")
-                        personaje_seleccionado.equipar_item(mision1.recompensa)
+                        personaje_seleccionado.equipar_articulo(mision1.recompensa)
                 elif contador_aranias == 3:
                     print(f"Felicidades, has completado la mision {mision2.nombre}")
                     mision2.mision_completada()

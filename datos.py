@@ -4,6 +4,7 @@ from habilidad import Habilidad
 from articulo import Articulo
 from mision import Mision
 from monstruos import Monstruos
+from personaje import Per
 
 #creo personajes
 mago = Mago(nombre='Rune Wizard', nivel=7, vida=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experiencia=200)
@@ -33,7 +34,7 @@ mision2 = Mision(nombre="Defiende el pueblo", descripcion="Protege el pueblo del
 mision3 = Mision(nombre="La invasion", descripcion="Detiene a los orcos. Mata 3 Orcos.", recompensa=articulos[1])
 
 # lista de quests
-lista_quest = [mision1, mision2, mision3]
+lista_mision = [mision1, mision2, mision3]
 
 # monstruos
 dragon = Monstruos('Dragon', 'Fuego', 100, 20, 10, 5)

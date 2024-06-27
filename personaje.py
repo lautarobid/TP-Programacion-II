@@ -23,8 +23,8 @@ class Personaje(ABC):
         return self.__nombre
     
     @nombre.setter
-    def nombre(self, new_nombre:str):
-        self.__nombre = new_nombre
+    def nombre(self, new_nombre: str):
+        self.__nombre = Personaje.__validar_nombre(new_nombre)
 
 
     def subir_nivel(self):
@@ -39,13 +39,13 @@ class Personaje(ABC):
     
 
     def equipar_articulo(self, articulo: Articulo):
-        self.__equipamiento.append(Articulo)
-        print(f"{self.__nombre} equipado {articulo.__nombre}.")
+        self.__equipamiento.append(articulo)
+        print(f"{self.nombre} equipado {articulo.nombre}.")
 
     def desequipar_articulo(self, articulo: Articulo):
         if articulo in self.__equipamiento:
             self.__equipamiento.remove(articulo)
-            print(f"{self.__nombre} desequipado {articulo.__nombre}.")
+            print(f"{self.nombre} desequipado {articulo.nombre}.")
 
     @classmethod
     def __validar_nombre(cls, nombre:str):
