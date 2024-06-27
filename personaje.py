@@ -38,11 +38,11 @@ class Personaje(ABC):
         print(f"{self.__nombre} subio de nivel a: {self.__nivel}!")
     
 
-    def equipar_item(self, articulo: Articulo):
+    def equipar_articulo(self, articulo: Articulo):
         self.__equipamiento.append(Articulo)
         print(f"{self.__nombre} equipado {articulo.__nombre}.")
 
-    def desequipar_item(self, articulo: Articulo):
+    def desequipar_articulo(self, articulo: Articulo):
         if articulo in self.__equipamiento:
             self.__equipamiento.remove(articulo)
             print(f"{self.__nombre} desequipado {articulo.__nombre}.")

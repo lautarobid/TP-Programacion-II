@@ -1,4 +1,5 @@
 from datos import *
+from personaje import *
 
 def crear_personaje():
     while True:
@@ -29,11 +30,11 @@ def nombre_ya_registrado(nombre: str) -> bool:
 def mostrar_articulos():
     for Articulo in articulos:
         print(f'''
-              [-]{articulos.nombre} 
-              [TIPO]: {articulos.tipo} 
-              [ATAQUE]:  {articulos.poder_ataque} 
-              [DEFENSA]: {articulos.defensa} 
-              [EFECTO]: {articulos.efecto}''')
+              [-]{Articulo.nombre} 
+              [TIPO]: {Articulo.tipo} 
+              [ATAQUE]:  {Articulo.poder_ataque} 
+              [DEFENSA]: {Articulo.defensa} 
+              [EFECTO]: {Articulo.efecto}''')
 
 def mostrar_personajes():
     for idx, personaje in enumerate(personajes,1):
@@ -57,9 +58,9 @@ def mostrar_habilidades():
             print(f'''
             [{idx}]
             [HABILIDAD]: {habilidad.nombre} 
-            [MANA]: {habilidad.mana_cost} 
+            [MANA]: {habilidad.mana_costo} 
             [DAÑO]:  {habilidad.danio} 
-            [COOLDOWN]: {habilidad.cooldown}''')
+            [COOLDOWN]: {habilidad.enfriamiento}''')
     habilidad_idx = int(input("Ingrese el numero de la habilidad que desea usar: ")) - 1
     return habilidades[habilidad_idx]
 
@@ -132,7 +133,7 @@ while True:
                 mostrar_quest()
                 print("-------------------------------------------------------------------------------------")
             elif num == "2":
-                mostrar_items()
+                mostrar_articulos()
                 print("-------------------------------------------------------------------------------------")
             elif num == "3":
                 mostrar_inventario()
@@ -153,23 +154,23 @@ while True:
                 print("-------------------------------------------------------------------------------------")
 
                 if contador_dragones == 3:
-                    if quest1.is_completed():
+                    if mision1.esta_completada():
                         print("La mision ya fue completada.")
                     else:
-                        print(f"Felicidades, has completado la mision {quest1.name}")
-                        quest1.complete_quest()
-                        print(f"Tu recompensa es: {quest1.rewards}")
-                        personaje_seleccionado.equipar_item(quest1.rewards)
+                        print(f"Felicidades, has completado la mision {mision1.nombre}")
+                        mision1.mision_completada()
+                        print(f"Tu recompensa es: {mision1.recompensa}")
+                        personaje_seleccionado.equipar_item(mision1.recompensa)
                 elif contador_aranias == 3:
-                    print(f"Felicidades, has completado la mision {quest2.name}")
-                    quest2.complete_quest()
-                    print(f"Tu recompensa es: {quest2.rewards}")
-                    personaje_seleccionado.equipar_item(quest2.rewards)
+                    print(f"Felicidades, has completado la mision {mision2.nombre}")
+                    mision2.mision_completada()
+                    print(f"Tu recompensa es: {mision2.rewards}")
+                    personaje_seleccionado.equipar_articulo(mision2.recompensa)
                 elif contador_orcos == 3:
-                    print(f"Felicidades, has completado la mision {quest3.name}")
-                    quest3.complete_quest()
-                    print(f"Tu recompensa es: {quest3.rewards}")
-                    personaje_seleccionado.equipar_item(quest3.rewards)                  
+                    print(f"Felicidades, has completado la mision {mision3.nombre}")
+                    mision3.mision_completada()
+                    print(f"Tu recompensa es: {mision3.rewards}")
+                    personaje_seleccionado.equipar_articulo(mision3.recompensa)                  
             elif num == "5":
                 print("Gracias por elegir MU Rosario.")
                 break
