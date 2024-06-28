@@ -25,6 +25,77 @@ class Personaje(ABC):
     @nombre.setter
     def nombre(self, new_nombre: str):
         self.__nombre = Personaje.__validar_nombre(new_nombre)
+        
+    @property 
+    def nivel(self) -> int:
+        return self.__nivel
+    
+    @nivel.setter
+    def nivel(self, new_nivel: int):
+        self.__nivel = new_nivel
+        
+    @property 
+    def vida(self) -> int:
+        return self.__vida
+    
+    @vida.setter
+    def vida(self, new_vida: int):
+        self.__vida = new_vida
+        
+    @property 
+    def mana(self) -> int:
+        return self.__mana
+    
+    @mana.setter
+    def mana(self, new_mana: int):
+        self.__mana = new_mana
+        
+    @property 
+    def fuerza(self) -> int:
+        return self.__fuerza
+    
+    @fuerza.setter
+    def fuerza(self, new_fuerza: int):
+        self.__fuerza = new_fuerza
+        
+    @property 
+    def agilidad(self) -> int:
+        return self.__agilidad
+    
+    @agilidad.setter
+    def agilidad(self, new_agilidad: int):
+        self.__agilidad = new_agilidad
+        
+    @property 
+    def vitalidad(self) -> int:
+        return self.__vitalidad
+    
+    @vitalidad.setter
+    def vitalidad(self, new_vitalidad: int):
+        self.__vitalidad = new_vitalidad
+        
+    
+    @property 
+    def energia(self) -> int:
+        return self.__energia
+    
+    @energia.setter
+    def energia(self, new_energia: int):
+        self.__energia = new_energia
+        
+    @property 
+    def experiencia(self) -> int:
+        return self.__experiencia
+    
+    @experiencia.setter
+    def experiencia(self, new_experiencia: int):
+        self.__experiencia = new_experiencia
+    
+    @property     
+    def obtener_equipamiento(self):
+        return self.__equipamiento
+    
+    
 
 
     def subir_nivel(self):
@@ -35,7 +106,7 @@ class Personaje(ABC):
         self.__agilidad += 2
         self.__vitalidad += 3
         self.__energia += 2
-        print(f"{self.__nombre} subio de nivel a: {self.__nivel}!")
+        print(f"{self.nombre} subio de nivel a: {self.nivel}!")
     
 
     def equipar_articulo(self, articulo: Articulo):
@@ -53,3 +124,15 @@ class Personaje(ABC):
             raise RuntimeError('ERROR- NOMBRE REGISTRADO')
         cls.__nombres_registrados.add(nombre)
         return nombre
+    
+    def _str_(self) -> str:
+        return f'''
+        Nombre: {self.nombre}
+        Nivel: {self.nivel}
+        Vida: {self.vida}
+        Mana: {self.mana}
+        Fuerza: {self.fuerza}
+        Agilidad: {self.agilidad}
+        Vitalidad: {self.vitalidad}
+        Energia: {self.energia}
+        Experiencia: {self.experiencia}'''

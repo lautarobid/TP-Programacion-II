@@ -13,9 +13,9 @@ def crear_personaje():
     print("2. Caballero")
     clase = input("Ingrese el tipo de su personaje: ")
     if clase == '1':
-        nuevo_personaje = Mago(nombre=nombre, nivel= 1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
+        nuevo_personaje = Personaje(nombre=nombre, nivel= 1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
     elif clase == '2':
-        nuevo_personaje = Caballero(nombre=nombre, nivel=1,  vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
+        nuevo_personaje = Personaje(nombre=nombre, nivel=1,  vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
     personajes.append(nuevo_personaje)
     print(f"Personaje [{nuevo_personaje.nombre}] creado!")
     return nuevo_personaje
@@ -27,13 +27,13 @@ def nombre_ya_registrado(nombre: str) -> bool:
     return False
 
 def mostrar_articulos():
-    for Articulo in articulos:
+    for articulo in articulos:
         print(f'''
-              [-]{Articulo.nombre} 
-              [TIPO]: {Articulo.tipo} 
-              [ATAQUE]:  {Articulo.poder_ataque} 
-              [DEFENSA]: {Articulo.defensa} 
-              [EFECTO]: {Articulo.efecto}''')
+              [-]{articulo.nombre} 
+              [TIPO]: {articulo.tipo} 
+              [ATAQUE]:  {articulo.poder_ataque} 
+              [DEFENSA]: {articulo.defensa} 
+              [EFECTO]: {articulo.efecto}''')
 
 def mostrar_personajes():
     for idx, personaje in enumerate(personajes,1):
@@ -41,13 +41,13 @@ def mostrar_personajes():
               [{idx}]
                 [NOMBRE]: {personaje.nombre}
                 [NIVEL]: {personaje.nivel}
-                [HEALTH]: {personaje.health}
+                [HEALTH]: {personaje.vida}
                 [MANA]: {personaje.mana}
                 [FUERZA]: {personaje.fuerza}
                 [AGILIDAD]: {personaje.agilidad}
                 [VITALIDAD]: {personaje.vitalidad}
                 [ENERGIA]: {personaje.energia}
-                [EXPERIENCIA]: {personaje.experience} ''')
+                [EXPERIENCIA]: {personaje.experiencia} ''')
     personaje_idx = int(input('Ingrese el numero del personaje a elegir: '))-1
     return personajes[personaje_idx]
 
@@ -64,37 +64,37 @@ def mostrar_habilidades():
     return habilidades[habilidad_idx]
 
 def mostrar_monstruos():
-    for idx, Monstruos in enumerate(lista_monstruos, 1): 
+    for idx, monstruos in enumerate(lista_monstruos, 1): 
             print(f'''
             [{idx}]
-            [NOMBRE]: {Monstruos.nombre} 
-            [TIPO]: {Monstruos.tipo} 
-            [VIDA]:  {Monstruos.vida} 
-            [ATAQUE]:  {Monstruos.ataque}             
-            [DEFENSA]:  {Monstruos.defensa} 
-            [VELOCIDAD]: {Monstruos.velocidad}''')
-    Monstruos_idx = int(input("Ingrese el numero del monstruo a elegir: ")) -1
-    return lista_monstruos[Monstruos_idx]
+            [NOMBRE]: {monstruos.nombre} 
+            [TIPO]: {monstruos.tipo} 
+            [VIDA]:  {monstruos.vida} 
+            [ATAQUE]:  {monstruos.ataque}             
+            [DEFENSA]:  {monstruos.defensa} 
+            [VELOCIDAD]: {monstruos.velocidad}''')
+    monstruos_idx = int(input("Ingrese el numero del monstruo a elegir: ")) -1
+    return lista_monstruos[monstruos_idx]
 
 def mostrar_misiones():
-    for idx, Mision in enumerate(lista_mision, 1): 
+    for idx, mision in enumerate(lista_mision, 1): 
         print(f'''
             [{idx}]
-            [QUEST]: {Mision.nombre} 
-            [DESCRIPCION]: {Mision.descripcion}
-            [RECOMPENSA]:  {Mision.recompensa}''')
+            [QUEST]: {mision.nombre} 
+            [DESCRIPCION]: {mision.descripcion}
+            [RECOMPENSA]:  {mision.recompensa}''')
         print('------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
-    Mision_idx = int(input('Ingrese el numero de la quest: '))-1
-    return lista_mision[Mision_idx]
+    mision_idx = int(input('Ingrese el numero de la quest: '))-1
+    return lista_mision[mision_idx]
 
 def mostrar_inventario():
     for personaje in personajes:
         print(f'''
             [NOMBRE]: {personaje.nombre}
             [INVENTARIO]: ''')
-        if personaje.equipamiento:
-            for item in personaje.equipamiento:
-                print(f"\n{item}")
+        if personaje.__equipamiento:
+            for articulos in personaje.__equipamiento:
+                print(f"\n{articulos}")
         else:
             print("El inventario está vacío.")
 
@@ -123,7 +123,7 @@ while True:
         crear_personaje()
     elif opt == "2":
         personaje_seleccionado = mostrar_personajes()
-        print("El personaje elegido es: ", personaje_seleccionado)
+        print("El personaje elegido es: ", personaje_seleccionado.nombre)
         while True:
             input("Presione ENTER para continuar...")
             print(menu2())
