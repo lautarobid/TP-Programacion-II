@@ -90,13 +90,7 @@ class Personaje(ABC):
     @experiencia.setter
     def experiencia(self, new_experiencia: int):
         self.__experiencia = new_experiencia
-    
-    @property     
-    def obtener_equipamiento(self):
-        return self.__equipamiento
-    
-    
-
+        
 
     def subir_nivel(self):
         self.__nivel += 1
