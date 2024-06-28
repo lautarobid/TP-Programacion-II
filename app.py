@@ -92,8 +92,8 @@ def mostrar_inventario():
         print(f'''
             [NOMBRE]: {personaje.nombre}
             [INVENTARIO]: ''')
-        if personaje.__equipamiento:
-            for articulos in personaje.__equipamiento:
+        if personaje.equipamiento:
+            for articulos in personaje.equipamiento:
                 print(f"\n{articulos}")
         else:
             print("El inventario está vacío.")

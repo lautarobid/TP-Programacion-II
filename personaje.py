@@ -16,7 +16,7 @@ class Personaje(ABC):
         self.__vitalidad = vitalidad
         self.__energia = energia
         self.__experiencia = experiencia
-        self.__equipamiento: List[Articulo] = []
+        self.equipamiento: List[Articulo] = []
 
     @property 
     def nombre(self) -> str:
@@ -104,12 +104,12 @@ class Personaje(ABC):
     
 
     def equipar_articulo(self, articulo: Articulo):
-        self.__equipamiento.append(articulo)
+        self.equipamiento.append(articulo)
         print(f"{self.nombre} equipado {articulo.nombre}.")
 
     def desequipar_articulo(self, articulo: Articulo):
-        if articulo in self.__equipamiento:
-            self.__equipamiento.remove(articulo)
+        if articulo in self.equipamiento:
+            self.equipamiento.remove(articulo)
             print(f"{self.nombre} desequipado {articulo.nombre}.")
 
     @classmethod
