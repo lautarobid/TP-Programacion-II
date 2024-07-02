@@ -103,7 +103,7 @@ class Monstruos:
     def __str__(self) -> str:
         return (f"Nombre: {self.nombre}\nTipo: {self.tipo}\nVida: {self.vida}\n"
                 f"Ataque: {self.ataque}\nDefensa: {self.defensa}\nVelocidad: {self.velocidad}")
-
+"""
 class Dragon(Monstruos):
     pass
 
@@ -111,4 +111,4 @@ class Orco(Monstruos):
     pass
 
 class Arania(Monstruos):
-    pass
+    pass"""
