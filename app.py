@@ -8,14 +8,20 @@ def crear_personaje():
         else:
             print("El nombre ingresado ya existe. Por favor, ingrese un nuevo nombre...")
     
-    print("Seleccione el tipo de personaje: ")
-    print("1. Mago")
-    print("2. Caballero")
-    clase = input("Ingrese el tipo de su personaje: ")
-    if clase == '1':
-        nuevo_personaje = Personaje(nombre=nombre, nivel=1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
-    elif clase == '2':
-        nuevo_personaje = Personaje(nombre=nombre, nivel=1, vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
+    while True:
+        print("Seleccione el tipo de personaje: ")
+        print("1. Mago")
+        print("2. Caballero")
+        clase = input("Ingrese el tipo de su personaje: ")
+        if clase == '1':
+            nuevo_personaje = Personaje(nombre=nombre, nivel=1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
+            break
+        elif clase == '2':
+            nuevo_personaje = Personaje(nombre=nombre, nivel=1, vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
+            break
+        else:
+            print("Opción no válida. Por favor, seleccione 1 o 2.")
+
     personajes.append(nuevo_personaje)
     return f"Personaje [{nuevo_personaje.nombre}] creado!"
 
@@ -46,8 +52,15 @@ def mostrar_personajes() -> Personaje:
                 [VITALIDAD]: {personaje.vitalidad}
                 [ENERGIA]: {personaje.energia}
                 [EXPERIENCIA]: {personaje.experiencia} ''')
-    personaje_idx = int(input('Ingrese el número del personaje a elegir: ')) - 1
-    return personajes[personaje_idx]
+    while True:
+        try:
+            personaje_idx = int(input('Ingrese el número del personaje a elegir: ')) - 1
+            if 0 <= personaje_idx < len(personajes):
+                return personajes[personaje_idx]
+            else:
+                print("Número de personaje no válido. Intente de nuevo.")
+        except ValueError:
+            print("Entrada no válida. Por favor, ingrese un número.")
 
 def mostrar_habilidades() -> Habilidad:
     habilidades_str = "\n".join([f'''
@@ -57,8 +70,15 @@ def mostrar_habilidades() -> Habilidad:
         [DAÑO]:  {habilidad.danio} 
         [COOLDOWN]: {habilidad.enfriamiento}''' for idx, habilidad in enumerate(habilidades, 1)])
     print(habilidades_str)
-    habilidad_idx = int(input("Ingrese el número de la habilidad que desea usar: ")) - 1
-    return habilidades[habilidad_idx]
+    while True:
+        try:
+            habilidad_idx = int(input("Ingrese el número de la habilidad que desea usar: ")) - 1
+            if 0 <= habilidad_idx < len(habilidades):
+                return habilidades[habilidad_idx]
+            else:
+                print("Número de habilidad no válido. Intente de nuevo.")
+        except ValueError:
+            print("Entrada no válida. Por favor, ingrese un número.")
 
 def mostrar_monstruos() -> Monstruos:
     monstruos_str = "\n".join([f'''
@@ -70,8 +90,15 @@ def mostrar_monstruos() -> Monstruos:
         [DEFENSA]:  {monstruos.defensa} 
         [VELOCIDAD]: {monstruos.velocidad}''' for idx, monstruos in enumerate(lista_monstruos, 1)])
     print(monstruos_str)
-    monstruos_idx = int(input("Ingrese el número del monstruo a elegir: ")) - 1
-    return lista_monstruos[monstruos_idx]
+    while True:
+        try:
+            monstruos_idx = int(input("Ingrese el número del monstruo a elegir: ")) - 1
+            if 0 <= monstruos_idx < len(lista_monstruos):
+                return lista_monstruos[monstruos_idx]
+            else:
+                print("Número de monstruo no válido. Intente de nuevo.")
+        except ValueError:
+            print("Entrada no válida. Por favor, ingrese un número.")
 
 def mostrar_misiones() -> Mision:
     misiones_str = "\n".join([f'''
@@ -80,8 +107,15 @@ def mostrar_misiones() -> Mision:
         [DESCRIPCION]: {mision.descripcion}
         [RECOMPENSA]:  {mision.recompensa.nombre}''' for idx, mision in enumerate(lista_mision, 1)])
     print(misiones_str)
-    mision_idx = int(input('Ingrese el número de la quest: ')) - 1
-    return lista_mision[mision_idx]
+    while True:
+        try:
+            mision_idx = int(input('Ingrese el número de la quest: ')) - 1
+            if 0 <= mision_idx < len(lista_mision):
+                return lista_mision[mision_idx]
+            else:
+                print("Número de misión no válido. Intente de nuevo.")
+        except ValueError:
+            print("Entrada no válida. Por favor, ingrese un número.")
 
 def mostrar_inventario() -> str:
     inventario_str = "\n".join([f'''
