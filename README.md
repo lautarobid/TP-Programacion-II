@@ -1,7 +1,6 @@
 # TP-Programacion-II TUP 8 
 # PROGRAMACION II 2024.
 Geraldine Martinez - Legajo Nº 512309
-Delfina Marmirolli - Legajo Nº 53383
 Lorenzo Piatti - Legajo Nº 53392
 Bidrera Lautaro - Legajo Nº 53349
 
