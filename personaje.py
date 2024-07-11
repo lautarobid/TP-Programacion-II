@@ -6,7 +6,6 @@ class Personaje(ABC):
     
     __nombres_registrados = set()
 
-    @abstractmethod
     def __init__(self, nombre: str, nivel: int, vida: int, mana: int, fuerza: int, agilidad: int, vitalidad: int, energia: int, experiencia: int):
         self.__nombre = Personaje.__validar_nombre(nombre)
         self.__nivel = nivel
