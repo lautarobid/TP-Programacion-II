@@ -118,10 +118,10 @@ def mostrar_misiones() -> Mision:
         except ValueError:
             print("Entrada no válida. Por favor, ingrese un número.")
 
-def mostrar_inventario() -> str:
+def mostrar_inventario(personaje_seleccionado) -> str:
     inventario_str = "\n".join([f'''
-        [NOMBRE]: {personaje.nombre}
-        [INVENTARIO]: {", ".join([str(articulo) for articulo in personaje.equipamiento]) if personaje.equipamiento else "El inventario está vacío."}''' for personaje in personajes])
+        [NOMBRE]: {personaje_seleccionado.nombre}
+        [INVENTARIO]: {", ".join([str(articulo) for articulo in personaje_seleccionado.equipamiento]) if personaje_seleccionado.equipamiento else "El inventario está vacío."}'''])
     return inventario_str
 
 def menu() -> str:
@@ -168,7 +168,7 @@ def main():
                     print(mostrar_articulos())
                     print("-------------------------------------------------------------------------------------")
                 elif num == "3":
-                    print(mostrar_inventario())
+                    print(mostrar_inventario(personaje_seleccionado))
                 elif num == "4":
                     monstruo_seleccionado = mostrar_monstruos()
                     habilidad_seleccionada = mostrar_habilidades()
