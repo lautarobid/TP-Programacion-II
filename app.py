@@ -46,7 +46,7 @@ def mostrar_personajes() -> Personaje:
                 [NOMBRE]: {personaje.nombre}
                 [TIPO]: {personaje.tipo}
                 [NIVEL]: {personaje.nivel}
-                [HEALTH]: {personaje.vida}
+                [VIDA]: {personaje.vida}
                 [MANA]: {personaje.mana}
                 [FUERZA]: {personaje.fuerza}
                 [AGILIDAD]: {personaje.agilidad}
@@ -69,7 +69,7 @@ def mostrar_habilidades() -> Habilidad:
         [HABILIDAD]: {habilidad.nombre} 
         [MANA]: {habilidad.mana_costo} 
         [DAÑO]:  {habilidad.danio} 
-        [COOLDOWN]: {habilidad.enfriamiento}''' for idx, habilidad in enumerate(habilidades, 1)])
+        [ENFRIAMIENTO]: {habilidad.enfriamiento}''' for idx, habilidad in enumerate(habilidades, 1)])
     print(habilidades_str)
     while True:
         try:
@@ -104,7 +104,7 @@ def mostrar_monstruos() -> Monstruos:
 def mostrar_misiones() -> Mision:
     misiones_str = "\n".join([f'''
         [{idx}]
-        [QUEST]: {mision.nombre} 
+        [MISION]: {mision.nombre} 
         [DESCRIPCION]: {mision.descripcion}
         [RECOMPENSA]:  {mision.recompensa.nombre}''' for idx, mision in enumerate(lista_mision, 1)])
     print(misiones_str)
@@ -121,7 +121,7 @@ def mostrar_misiones() -> Mision:
 def mostrar_inventario(personaje_seleccionado) -> str:
     inventario_str = "\n".join([f'''
         [NOMBRE]: {personaje_seleccionado.nombre}
-        [INVENTARIO]: {", ".join([str(articulo) for articulo in personaje_seleccionado.equipamiento]) if personaje_seleccionado.equipamiento else "El inventario está vacío."}'''])
+        [INVENTARIO]: {", ".join([str(articulo) for articulo in personaje_seleccionado.equipamiento]) if personaje_seleccionado.equipamiento else "El inventario está vacío."}\n'''])
     return inventario_str
 
 def menu() -> str:
@@ -135,8 +135,8 @@ def menu() -> str:
 def menu2() -> str:
     return """
     Menú:
-    1. Mostrar Quest
-    2. Mostrar Items
+    1. Mostrar Misiones
+    2. Mostrar Articulos
     3. Mostrar Inventario
     4. Pelear
     5. Salir
