@@ -30,10 +30,6 @@ class Personaje(ABC):
     @property
     def tipo(self) -> str:
         return self.__tipo
-    
-    @tipo.setter
-    def tipo(self, new_tipo:str):
-        self.__tipo = new_tipo
 
     @property
     def nivel(self) -> int:
@@ -129,6 +125,7 @@ class Personaje(ABC):
     def __str__(self) -> str:
         return (f'''
         Nombre: {self.nombre}
+        Tipo: {self.tipo}
         Nivel: {self.nivel}
         Vida: {self.vida}
         Mana: {self.mana}
