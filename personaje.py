@@ -6,8 +6,9 @@ class Personaje(ABC):
     
     __nombres_registrados = set()
 
-    def __init__(self, nombre: str, nivel: int, vida: int, mana: int, fuerza: int, agilidad: int, vitalidad: int, energia: int, experiencia: int):
+    def __init__(self, nombre: str, tipo:str, nivel: int, vida: int, mana: int, fuerza: int, agilidad: int, vitalidad: int, energia: int, experiencia: int):
         self.__nombre = Personaje.__validar_nombre(nombre)
+        self.__tipo = tipo
         self.__nivel = nivel
         self.__vida = vida
         self.__mana = mana
@@ -25,6 +26,14 @@ class Personaje(ABC):
     @nombre.setter
     def nombre(self, new_nombre: str):
         self.__nombre = Personaje.__validar_nombre(new_nombre)
+        
+    @property
+    def tipo(self) -> str:
+        return self.__tipo
+    
+    @tipo.setter
+    def tipo(self, new_tipo:str):
+        self.__tipo = new_tipo
 
     @property
     def nivel(self) -> int:

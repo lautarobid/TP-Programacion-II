@@ -14,10 +14,10 @@ def crear_personaje():
         print("2. Caballero")
         clase = input("Ingrese el tipo de su personaje: ")
         if clase == '1':
-            nuevo_personaje = Mago(nombre=nombre, nivel=1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
+            nuevo_personaje = Mago(nombre=nombre, tipo='Mago', nivel=1, vida=500, mana=40, fuerza=50, agilidad=8, vitalidad=12, energia=20, experiencia=200)
             break
         elif clase == '2':
-            nuevo_personaje = Caballero(nombre=nombre, nivel=1, vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
+            nuevo_personaje = Caballero(nombre=nombre, tipo='Caballero', nivel=1, vida=420, mana=30, fuerza=60, agilidad=9, vitalidad=18, energia=10, experiencia=150)
             break
         else:
             print("Opción no válida. Por favor, seleccione 1 o 2.")
@@ -44,6 +44,7 @@ def mostrar_personajes() -> Personaje:
         print(f'''
               [{idx}]
                 [NOMBRE]: {personaje.nombre}
+                [TIPO]: {personaje.tipo}
                 [NIVEL]: {personaje.nivel}
                 [HEALTH]: {personaje.vida}
                 [MANA]: {personaje.mana}

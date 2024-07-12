@@ -7,8 +7,8 @@ from monstruos import Monstruos
 from personaje import Personaje
 
 # Creo personajes
-mago = Mago(nombre='Mago', nivel=7, vida=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experiencia=200)
-caballero = Caballero(nombre='Caballero', nivel=9, vida=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experiencia=150)
+mago = Mago(nombre='Roberto', tipo='Mago', nivel=7, vida=100, mana=40, fuerza=5, agilidad=8, vitalidad=12, energia=20, experiencia=200)
+caballero = Caballero(nombre='Laucha', tipo='Caballero', nivel=9, vida=120, mana=30, fuerza=10, agilidad=9, vitalidad=18, energia=10, experiencia=150)
 
 personajes = [mago, caballero]
 
